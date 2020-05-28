@@ -118,3 +118,12 @@
     - name: print the connectivity test results
       debug:
         var: ssh_connection_test.stdout_lines
+    - hosts: adminservers
+    
+   - name: Unpack archive
+     unarchive:
+        src: /u01/app/software/jdk/jdk-8u172-linux-x64.tar.gz
+        dest: /home/ec2-user
+        remote_src: yes
+    - hosts: adminservers
+    
